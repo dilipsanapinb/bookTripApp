@@ -28,7 +28,7 @@ bookRoute.post('/api/trip', async (req, res) => {
 bookRoute.get('/api/trip', async (req, res) => {
     try {
         let alltrips = await Trip.find();
-        res.status(200).send({ "Message": "All Trips", 'All Trips': alltrips });
+        res.status(200).send({ "Message": "All Trips", 'trips': alltrips });
     } catch (error) {
         console.log("Error:" + error);
         res.status(500).send({ Message: error.message });
